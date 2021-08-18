@@ -29,3 +29,15 @@ Use `-h` to see all the available options:
 ruby typeset.rb -h
 ```
 
+## Typing methods
+
+In Matt's video, the distances are estimated according to the options:
+
+```bash
+ruby typeset.rb --onsite -1
+```
+
+That is: using only one finger and starting at the initial letter of the word.
+The default of this script is: type using two fingers (`-2`) starting at the
+positions F and J (`--no-onsite`).
+
