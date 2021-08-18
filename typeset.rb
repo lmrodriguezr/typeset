@@ -150,6 +150,11 @@ OptionParser.new do |opts|
   opts.on(
     '-2', '--two-finger', 'Typing method: Two-finger pecker (default)'
   ) { |v| o[:method] = TwoFingerTyper }
+  opts.separator ''
+  opts.on(
+    '-i', '--input FILE',
+    'Read from this file instead of STDIN (implies -q)'
+  ) { |v| o[:input] = v ; o[:quiet] = true }
   opts.on(
     '-o', '--output FILE',
     'Save distances per line: total and per-character (tab-delimited)'
@@ -167,6 +172,7 @@ t.onsite! if o[:onsite]
 total = 0.0
 ofh = nil
 ofh = File.open(o[:output], 'w') if o[:output]
+$stdin = File.open(o[:input], 'r') if o[:input]
 
 $stdin.each do |ln|
   d = t.type_dist(ln)

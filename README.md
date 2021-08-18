@@ -17,10 +17,10 @@ ruby typeset.rb
 
 Each newline will trigger the estimations, and you can exit with `Ctrl-D`
 
-Alternatively, you can use STDIN from a flat file:
+Alternatively, you can use read from a flat file:
 
 ```bash
-ruby typeset.rb -o per-line-distances.tsv < some-file.txt
+ruby typeset.rb -o per-line-distances.tsv -i some-file.txt
 ```
 
 Use `-h` to see all the available options:
